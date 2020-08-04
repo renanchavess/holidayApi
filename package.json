@@ -1,8 +1,7 @@
 { 
   "scripts": {
     "dev": "nodemon src/server.js",
-    "dev:debug": "nodemon --inspect src/server.js",
-    "queue": "nodemon src/queue.js"
+    "dev:debug": "nodemon --inspect src/server.js"    
   },
   "dependencies": {
     "date-fns": "^2.15.0",
@@ -18,5 +17,8 @@
   "name": "holidays",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "yarn": "1.22.4"
+  }
 }
