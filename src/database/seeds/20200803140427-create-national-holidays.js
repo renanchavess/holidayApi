@@ -3,7 +3,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
 
-    await queryInterface.bulkInsert('holiday',
+    await queryInterface.bulkInsert('holidays',
     [
       {
         name: 'Ano Novo',
@@ -37,17 +37,15 @@ module.exports = {
         name: 'Natal',
         date: '12-25'
       },
+      {
+        name: 'Sexta-Feira Santa',        
+      }
     ], 
     {});
 
   },
 
-  down: async (queryInterface, Sequelize) => {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+  down: async (queryInterface, Sequelize) => {    
+    await queryInterface.bulkDelete('People', null, {});     
   }
 };
