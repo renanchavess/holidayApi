@@ -1,6 +1,4 @@
-const Sequelize = require('sequelize');
-const { parse } = require('date-fns');
-const { INTEGER } = require('sequelize');
+const Sequelize = require('sequelize');;
 const moment = require('moment');
 
 class Holiday extends Sequelize.Model {
