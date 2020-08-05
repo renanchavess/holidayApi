@@ -101,8 +101,7 @@ class HolidayController {
   } 
 
   async delete(req, res){
-    const ibgeCode = req.params.ibgeCode;
-    const ibgeCodeState = ibgeCode.substring(0,2);
+    const ibgeCode = req.params.ibgeCode;    
     const dateOrName = req.params.date;
     const isDate = moment( moment().format('YYYY')+`-${dateOrName}`).isValid();
 
@@ -125,7 +124,7 @@ class HolidayController {
     else {
       holiday = await Holiday.findOne({
         where: {
-          ibgeCode: { [Op.or]: [ null,[ibgeCodeState, ibgeCode]] },
+          ibgeCode: { [Op.or]: [ null,[ibgeCode.substring(0,2), ibgeCode]] },
           date: dateOrName,
         }
       });  
