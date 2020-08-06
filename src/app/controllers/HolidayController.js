@@ -110,7 +110,10 @@ class HolidayController {
     
     let holiday = null;
 
+    //checa se é data
     if(!isDate) {
+
+      const nameHoliday = Holiday.getNameHolidayByUrl(dateOrName);
       if(nameHoliday) {
         const nameHoliday = Holiday.getNameHolidayByUrl(dateOrName);
         holiday = await Holiday.findOne({
